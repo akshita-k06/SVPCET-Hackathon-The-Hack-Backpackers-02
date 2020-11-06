@@ -78,4 +78,4 @@ Command Descriprion
 **Note: Mention all the references used in the project her**
 
 **Example :**
-Reference 1 : https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Reference 1 : https://docs.djangoproject.com/en/3.1/
