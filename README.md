@@ -42,9 +42,7 @@ problem.
 
 ## Tech-Stack Used
 
-**Note: List all the technologies used in this project, here**
-...
-...
+1. Python(Django) 
 
 ## Video Link
 
