@@ -1,35 +1,57 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>reachme</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="register-photo">
-        <div class="form-container">
-            <div class="image-holder"></div>
-            <form method="post">
-                <h2 class="text-center"><strong>Create</strong> an account.</h2>
-                {% csrf_token %}
-                {{form}}
-                <div class="form-group">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
-                </div>
-                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" value="Register">Sign Up</button></div><a class="already" href="#">You already have an account? Login here.</a></form>
-        </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <div class="alert alert-success" role="alert">
+        This is only for the person in charge assigned for solving your problem!(Those who are complaining should not fill this form)
+      </div>
+      {% if messages %}
+      {% for message in messages %}
+      {% if message.tags == 'success' %}
+      <div class="alert alert-success" style="text-align: center;" role="alert">
+          {{message}}
+      </div>
+      {% endif %}
+      {% if message.tags == 'error' %}
+      <div class="alert alert-danger" style="text-align: center;" role="alert">
+          {{message}}
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+    <div class="container">
+        <br>
+        <h3 class="text-center">Sign up here</h3>
+        <br>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <div class="form-group">
+                <div class="form-check"><label class="form-check-label">
+                    <input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
+            </div>
+            <button type="submit" class="btn btn-primary" value="Register">Submit</button>
+        </form>
+        <br>
+        
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
