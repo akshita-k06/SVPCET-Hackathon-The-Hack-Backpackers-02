@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager,AbstractBaseUser
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 import django.utils.timezone
 from django.contrib.auth.hashers import make_password,mask_hash
 
@@ -46,14 +48,16 @@ class Users(AbstractBaseUser):
     alternative_phone = models.CharField(max_length=15, blank=True, null=True)
     aadhar_no = models.CharField(max_length=15, blank=True, null=True,unique=True)
     user_role = models.SmallIntegerField(default=0) 
-    is_active = models.BooleanField(default=True) 
+    is_active = models.BooleanField(default=False) 
     is_admin = models.BooleanField(default=False)
     otp_code = models.CharField(max_length=6, blank=True, null=True)
-    otp_created_at = models.DateTimeField()
+    otp_created_at = models.DateTimeField(blank=True,null=True)
     no_of_complaint =  models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     last_login = models.DateTimeField(auto_now=True)
+    upload_aadhar = models.FileField(upload_to="user_files",null=True,default=None,blank=True)
+    upload_id = models.FileField(upload_to="user_files",null=True,default=None,blank=True)
 
     objects = MyUserManager()
     username = None
@@ -82,3 +86,8 @@ class Users(AbstractBaseUser):
         return self.is_admin
 
 
+
+@receiver(post_delete, sender=Users)
+def Users_file_delete(sender, instance, **kwargs):
+    instance.upload_aadhar.delete(False) 
+    instance.upload_id.delete(False)
