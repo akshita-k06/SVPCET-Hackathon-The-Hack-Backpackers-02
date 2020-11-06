@@ -1,0 +1,125 @@
+{% extends "socialShout/base.html" %}
+{% load static %}
+
+
+{% block title %}BookBroker{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">We Welcome you and ready to serve you!</h4>
+    <p>Please fill the following form to register your complain.</p>
+    <hr>
+    <p class="mb-0">Please make sure that your problem is not fake, if it is so then you need to pay the fine Rs
+        2000/-(if you refuse to pay then your case will be handed over to the police.</p>
+</div>
+<div class="container">
+    <br>
+    <h3 class="text-center">Register Your Complain</h3>
+    <br>
+    <form>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" name="fullname" id="fullname" class="form-control"
+                placeholder="Yourname Fathername Surname">
+        </div>
+        <div class="form-group">
+            <label for="inputEmail4">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="xyz@something">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" name="inputaddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="contactno1">Contact number</label>
+                <input type="tel" name="contactno1" id="contactno1" class="form-control"
+                    placeholder="Enter your contact number">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="contactno2">Alternate contact number</label>
+                <input type="tel" name="contactno2" id="contactno2" class="form-control"
+                    placeholder="Enter your another contact number">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="aadharno">Aadhar number</label>
+                <input type="text" name="aadharno" id="aadharno" class="form-control"
+                    placeholder="Enter your aadhar card number">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2">
+                <label for="inputPincode">Pincode</label>
+                <input type="text" class="form-control" id="pincode" name="pincode">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputcity" name="inputcity">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputstate" name="inputstate" class="form-control">
+                    <option selected>Choose..</option>
+                    <option>Maharasthra</option>
+                    <option>Rajasthan</option>
+                    <option>Madhya Pradesh</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Upload your Aadhar card image</label>
+            <input type="file" class="form-control-file1" id="exampleFormControlFile1">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Upload the image of scene for which you are registering the
+                complaint</label>
+            <input type="file" class="form-control-file1" id="exampleFormControlFile2">
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#staticBackdrop">Register</button>
+    </form>
+    <br>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Enter your OTP to proceed further</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputCity">Enter OTP: </label>
+                        <input type="text" class="form-control" id="inputotp" name="inputotp">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Resend</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block footer %}
+
+{% endblock footer %}
