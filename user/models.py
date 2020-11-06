@@ -46,7 +46,7 @@ class Users(AbstractBaseUser):
     email = models.EmailField(verbose_name='email address',max_length=255,unique=True)
     phone = models.CharField(max_length=15, blank=True, null=True)
     alternative_phone = models.CharField(max_length=15, blank=True, null=True)
-    aadhar_no = models.CharField(max_length=15, blank=True, null=True,unique=True)
+    aadhar_no = models.CharField(max_length=15,unique=True,default=None)
     user_role = models.SmallIntegerField(default=0) 
     is_active = models.BooleanField(default=False) 
     is_admin = models.BooleanField(default=False)
@@ -56,8 +56,8 @@ class Users(AbstractBaseUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     last_login = models.DateTimeField(auto_now=True)
-    upload_aadhar = models.FileField(upload_to="user_files",null=True,default=None,blank=True)
-    upload_id = models.FileField(upload_to="user_files",null=True,default=None,blank=True)
+    upload_aadhar = models.FileField(upload_to="user_files")
+    upload_id = models.FileField(upload_to="user_files")
 
     objects = MyUserManager()
     username = None

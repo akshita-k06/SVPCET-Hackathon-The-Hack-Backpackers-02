@@ -14,11 +14,14 @@ class UserCreationForm(forms.ModelForm):
     password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
     class Meta:
         model = Users
-        fields = ('email','phone','first_name','last_name')
+        fields = ('email','phone','first_name','last_name','aadhar_no','upload_aadhar','upload_id')
         labels = {
             'phone':('Mobile No'),
             'first_name':('First Name'),
             'last_name':('Last Name'),
+            'aadhar_no':('Aadhar no'),
+            'upload_aadhar':('Upload Aadhar Card'),
+            'upload_id':('Upload Id Card'),
         }
         error_messages = {
             'email' : {
