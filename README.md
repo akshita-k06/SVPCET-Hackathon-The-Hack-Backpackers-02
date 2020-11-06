@@ -43,7 +43,7 @@ problem.
 ## Tech-Stack Used
 
 1. Python(Django) 
-
+2. Database sqlite and mysql
 ## Video Link
 
 Mention the video link containing demo of the project here.
