@@ -1,11 +1,12 @@
-# SVPCET-Hackathon-Comet-03
+# SVPCET-Hackathon-Comet-12
 
 Project submitted under SVPCET Virtual Hackathon.
 
 Team Members:
-1. <teamMember1> (Team Leader)
-2. <teamMember2>
-3. ...
+1. Akshita Khandelwal (Team Leader)
+2. Vrushali Nagrale
+3. Pradyumna Mahajan
+4. Ritika Chouthmal
   
 ## Problem Statement
 
