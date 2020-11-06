@@ -10,10 +10,14 @@ Team Members:
   
 ## Problem Statement
 
-**Note: Describe problem statement provided to you, here**
-
-...
-...
+In India, many of the problems like road repairing, electricity etc of
+people can't reach to the person in charge responsible for that problemor sometimes the person in charge doesn't pay heed to the problem.
+Your task is to design and develop a system/software which will allow
+people to directly report the problems to the concerned authorities. The
+system must contain following :
+1. Fake problem detection mechanism
+2. Option to filter problems on the basis of category of the
+problem.
 
 ## Solution
 
