@@ -3,4 +3,4 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    return render(request,'socialShout/home.html')
+    return render(request,'socialShout/index.html')
