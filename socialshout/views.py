@@ -23,3 +23,28 @@ def subproblems_form(request,mainproblem_name,main_id,subproblem_name,sub_id):
         'main_id':main_id,
     }
     return render(request,'socialShout/problemsform.html',params)
+
+def problems_form_submit(request):
+    if request.method == 'POST':
+        fullname = request.POST['fullname']
+        inputaddress = request.POST['inputaddress']
+        email = request.POST['email']
+        contactno1 = request.POST['contactno1']
+        contactno2 = request.POST.get('contactno2')
+        aadharno = request.POST['aadharno']
+        pincode = request.POST['pincode']
+        inputcity = request.POST['inputcity']
+        password = request.POST['state']
+        password = request.POST.get('complaint')
+        upload_file= request.FILES['file1'] if 'file' in request.FILES else False
+        upload_file= request.FILES['file1'] if 'file' in request.FILES else False
+
+
+
+    return render(request,'socialShout/otp_verify.html',params)    
+
+def verify_otp(request):
+    params = {
+
+    }
+    return render(request,'socialShout/otp_verify.html',params)
