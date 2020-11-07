@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Complaint_Category,Complaint_Subcategory
+from .models import Complaint_Category,Complaint_Subcategory,Complaint_User
 # Register your models here.
 
 
@@ -16,4 +16,8 @@ class Complaint_CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Complaint_Subcategory)
 class Complaint_SubcategoryAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Complaint_User)
+class Complaint_UserAdmin(admin.ModelAdmin):
     pass
