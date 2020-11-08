@@ -39,6 +39,12 @@ class MyUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+user_role_choices =  ( (1, "MSEB Chief Engineer"), 
+    (2, "Municipal Commissioner"), 
+    (3, "Water Conservation officer"), 
+    (4, "Public grievance officer"), 
+    (5, "Department Safety Officer"), 
+) 
 
 class Users(AbstractBaseUser):
     first_name = models.CharField(max_length=50, blank=True, null=True)
@@ -47,7 +53,7 @@ class Users(AbstractBaseUser):
     phone = models.CharField(max_length=15, blank=True, null=True)
     alternative_phone = models.CharField(max_length=15, blank=True, null=True)
     aadhar_no = models.CharField(max_length=15,unique=True,default=None)
-    user_role = models.SmallIntegerField(default=0) 
+    user_role = models.SmallIntegerField(default=0,choices=user_role_choices) 
     is_active = models.BooleanField(default=False) 
     is_admin = models.BooleanField(default=False)
     otp_code = models.CharField(max_length=6, blank=True, null=True)

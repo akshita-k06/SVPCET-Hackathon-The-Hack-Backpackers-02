@@ -16,12 +16,14 @@ from .forms import UserCreationForm
 def register(request):
     if request.method == "GET":
         return render(
-            request, "registration/registration.html",
+            request, "registration/register.html",
             {"form": UserCreationForm}
         )
     elif request.method == "POST":
         try:
             form = UserCreationForm(request.POST,request.FILES)
+            file1=  form.files
+            
             if form.is_valid():
                 form.save()
                 messages.success(request,'your account is successfully Created')
