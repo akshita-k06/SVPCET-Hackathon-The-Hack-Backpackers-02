@@ -44,10 +44,15 @@ problem.
 
 1. Python(Django) 
 2. Database sqlite and mysql
+
+## Website link
+
+To see our website, please check out our website link : http://socialshout.psmweb.in/
+
+
 ## Video Link
 
-Mention the video link containing demo of the project here.
-(example -To see the demo, check out : https://reactjs.org/.)
+To see the demo, check out : https://drive.google.com/file/d/1L_N-xwezTMVNQJB-PwS1gcyqgfwJ9q1g/view?usp=sharing
 
 ## To run this project, run following commands
 
