@@ -32,11 +32,11 @@ To avoid fake problems, the complainant is bound to share the picture of the pro
 ...
 
 ## Problem Faced
-
-**Note: Describe various problems faced during the design and development of the project, here**
-
-...
-...
+ Firstly as everything was online, while contributing code it was a difficult and time consuming process.
+There were certain connectivity issues which led to waste time a bit.
+As it is the term end time, there were a lot of submissions and slide presentations simultaneously going on in the college.
+Debugging errors was a bit difficult.
+But if we look at the positive side we learnt time management quite well and it was a great experience for us working as a team on this project.
 
 ## Tech-Stack Used
 
