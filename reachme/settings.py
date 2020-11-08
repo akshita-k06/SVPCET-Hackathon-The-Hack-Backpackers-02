@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
+    'socialshout.apps.SocialshoutConfig',
+    'complaint.apps.ComplaintConfig',
 ]
 
 MIDDLEWARE = [
@@ -78,19 +80,19 @@ WSGI_APPLICATION = 'reachme.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'reachme',
-        'USER': '',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306'
-    }
-
     # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'reachme.sqlite3',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'reachme',
+    #     'USER': '',
+    #     'PASSWORD':'',
+    #     'HOST':'localhost',
+    #     'PORT':'3306'
     # }
+
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'reachme.sqlite3',
+    }
 }
 
 
@@ -124,14 +126,14 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 ## Custom login
 
 AUTH_USER_MODEL = 'user.Users'
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/complaint/user_solver/"
 LOGOUT_REDIRECT_URL = "/"
 
 
@@ -153,13 +155,13 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# EMAIL_HOST = 'smtpout.asia.secureserver.net'
-# EMAIL_PORT = 80
-# EMAIL_HOST_USER = ''  
-# EMAIL_HOST_PASSWORD = ''
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
-# EMAIL_TIMEOUT = 20
+EMAIL_HOST = ''
+EMAIL_PORT =  587
+EMAIL_HOST_USER = ''  
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_TIMEOUT = 20
 # EMAIL_SSL_KEYFILE
 # EMAIL_SSL_CERTFILE
 
