@@ -1,66 +1,110 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/loginpage.css' %}">
-    <title>Create Acc|BodyForce Supplements</title> 
-    
-    <script>
-      function validateform() {
-          var Name = document.signupform.name.value;
-          var phone = document.signupform.phone.value;
-          var password = document.signupform.password.value;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/loginpage.css' %}">
+  <title>Create Acc|BodyForce Supplements</title>
 
+  <script>
+    var _validFileExtensions = [".pdf"];    
+    function validateform() {
+      const fi = document.getElementById('id_upload_aadhar');
+      const fi1 = document.getElementById('id_upload_id');
+ 
+      // Check if any file is selected. 
+      if (fi.files.length > 0) {
+        fileName = fi.value; 
+        extension = fileName.split('.').pop();
+        if (extension  == "pdf")
+        {
+        for (const i = 0; i <= fi.files.length - 1; i++) {
 
+          const fsize = fi.files.item(i).size;
+          const file = Math.round((fsize / 1024));
+          // The size of the file. 
+          if (file > 2100) {
+            alert(
+              "File too Big, please select a file less than 2mb");
+            return false;
+          } else if (file < 100) {
 
-          if (Name == null || Name == "") {
-              alert("Name can't be blank");
-              return false;
+            alert(
+              "File too small, please select a file greater than 100kb");
+            return false;
           }
-          else if (phone.length == 0) {
-              alert("phone no can't be blank");
-              return false;
-          }
-          else if (password.length == 0) {
-              alert("Password can't be blank");
-              return false;
-          }
-          else if (checkBox.checked == false) {
-              alert("Select check box");
-              return false;
-          }
+        }
       }
-  </script> 
+      else
+      {
+        alert(
+          "File is invalid , please select a pdf file");
+        return false;
+      }
+      }
+      // Check if any file is selected. 
+      if (fi1.files.length > 0) {
+        fileName = fi.value; 
+        extension = fileName.split('.').pop();
+        if (extension  == "pdf")
+        {
+
+        for (const i = 0; i <= fi1.files.length - 1; i++) {
+
+          const fsize = fi1.files.item(i).size;
+          const file = Math.round((fsize / 1024));
+          // The size of the file. 
+          if (file >= 2100) {
+            alert(
+              "File too Big, please select a file less than 2mb");
+            return false;
+          } else if (file < 100) {
+
+            alert(
+              "File too small, please select a file greater than 100kb");
+            return false;
+          }
+        }
+      }
+      else{
+        alert(
+          "File is invalid , please select a pdf file");
+        return false;
+      }
+      }
+    }
+  </script>
 
 </head>
+
 <body>
 
 
-    <div class="login-section">
-      {% if messages %}
-      <ul>
+  <div class="login-section">
+    {% if messages %}
+    <ul>
       {% for m1 in messages %}
       <li>
-      <div class="alert alert-danger" style="text-align: center;" role="alert">
-          {{m1.message}} 
-      </div>
-    </li>
+        <div class="alert alert-danger" style="text-align: center;" role="alert">
+          {{m1.message}}
+        </div>
+      </li>
       {% endfor %}
     </ul>
-      {% endif %}
-        <div class="login-section-form">
-            <h4>Create Account</h4>
-            <form method="post">
-                {% csrf_token %}
-                {{form}}
-                <input type="submit" value="Register">
-            </form>
-            <!-- <form name="signupform" action="/user/create_user/" method="POST" onsubmit="return validateform()">
+    {% endif %}
+    <div class="login-section-form">
+      <h4>Create Account</h4>
+      <form method="post" onsubmit="return validateform()" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Register">
+      </form>
+      <!-- <form name="signupform" action="/user/create_user/" method="POST" onsubmit="return validateform()">
               {% csrf_token %}
                 <div class="form-group">
                   <label for="text">First Name:</label><br>
@@ -88,14 +132,15 @@
                 </div>
                 <button  id="submit-btn" type="submit">Done</button><br>
               </form> -->
-        </div>
     </div>
-    <a href="/">
-      <h6 class="back-option"><i class="fa fa-arrow-left"></i> Back to Home page</h6>
-    </a>
+  </div>
+  <a href="/">
+    <h6 class="back-option"><i class="fa fa-arrow-left"></i> Back to Home page</h6>
+  </a>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>

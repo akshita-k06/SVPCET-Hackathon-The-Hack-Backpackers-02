@@ -1,0 +1,39 @@
+{% extends "socialShout/base.html" %}
+{% load static %}
+
+
+{% block title %}Socialshot{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+
+
+<br>
+<div class="container">
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{complaint_subcategory.0.complaint_category.name}}</li>
+  </ol>
+</nav>
+  <div class="alert alert-secondary" role="alert">
+    {{complaint_subcategory.0.complaint_category.name}}<br>
+    So you have problems regarding {{complaint_subcategory.0.complaint_category.name}} in your locality!<br>
+    Choose one of the following conditions
+    <br>
+    
+    {% for cc1 in complaint_subcategory %}
+    <a class="btn btn-primary my-2" href="/problems_form/{{cc1.complaint_category.name}}/{{cc1.complaint_category.id}}/{{cc1.name}}/{{cc1.id}}/">{{cc1.name}}</a>
+    {% endfor %}
+  </div>
+  </div>
+  <br>
+
+{% endblock content %}
+
+{% block footer %}
+
+{% endblock footer %}

@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Reachme - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+
+    <div class="login-clean">
+        {% if messages %}
+        {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <div class="alert alert-success" style="text-align: center;" role="alert">
+            {{message}}
+        </div>
+        {% endif %}
+        {% if message.tags == 'error' %}
+        <div class="alert alert-danger" style="text-align: center;" role="alert">
+            {{message}}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        
+        <form method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit" value="Login">Log In</button>
+            </div>
+            <div class="form-group">
+                <a href="/user/register/" id="create-account" class="btn btn-primary btn-block">Create Account</a>
+            </div>
+            <a class="forgot" href="/user/accounts/password_reset/">Forgot your password?</a>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

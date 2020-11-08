@@ -28,9 +28,18 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Hello,{{ user.first_name|default:'Guest' }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/accounts/logout/">Logout</a>
+                </li>
+                {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="/user/accounts/login">Login</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
     </nav>

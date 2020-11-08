@@ -1,0 +1,42 @@
+{% extends "socialShout/base.html" %}
+{% load static %}
+
+
+{% block title %}Socialshot{% endblock title %}
+
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+
+
+<div class="alert alert-success" role="alert">
+  All the following information is regrading the people's problem you need to solve!
+</div>
+{% for cu1 in complaint_user %}
+  <div class="card" style="width: 76rem;">
+  <img src="/media/{{cu1.complaint_aadhar}}" style="width: 500px; height: 200px" class="card-img-top" alt="...">
+  <img src="/media/{{cu1.complaint_image}}" style="width: 500px; height: 200px" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><span>Name: </span>{{cu1.full_name}}</h5>
+    <p class="card-text"><span>reg id: </span>{{cu1.id}}</p>
+    <p class="card-text"><span>Email id: </span>{{cu1.email}}</p>
+    <p class="card-text"><span>Address: </span>{{cu1.address}}</p>
+    <p class="card-text"><span>Aadhaar Number: </span>{{cu1.aadhar_no}}</p>
+    <p class="card-text"><span>Contact Number : </span>{{cu1.phone}}</p>
+    <p class="card-text"><span>Alternate Contact Number: </span>{{cu1.alternative_phone}}</p>
+    <p class="card-text"><span>State: </span>{{cu1.state}}</p>
+    <p class="card-text"><span>City: </span>{{cu1.city}}</p>
+    <p class="card-text"><span>Pincode: </span> {{cu1.pincode}}</p>
+    <p class="card-text"><span>Description about the situation:</span>{{cu1.complaint_info}}</p>
+    <a href="#" class="btn btn-primary">Completed</a>
+  </div>
+</div>
+ {% endfor %}
+
+
+{% endblock content %}
+
+{% block footer %}
+
+{% endblock footer %}

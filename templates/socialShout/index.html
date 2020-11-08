@@ -2,7 +2,7 @@
 {% load static %}
 
 
-{% block title %}BookBroker{% endblock title %}
+{% block title %}Socialshot{% endblock title %}
 
 {% block head %}
 {% endblock head %}
@@ -14,33 +14,29 @@
   <h4>Click one of the following buttons if your problem is related to it!</h4>
 </div>
 <div class="container">
-  <div class="jumbotron">
-    <h5>If you have problem regarding water!</h5>
-    <br>
-    <a class="btn btn-primary btn-lg" href="/socialshout/subcatagory.html" id="openwater" role="button">Click me</a>
-  </div>
-  <div class="jumbotron">
-    <h5>If you have problem regarding garbage collection!</h5>
-    <br>
-    <a class="btn btn-primary btn-lg" href="/socialshout/subcatagory.html" id="opengarbage" role="button">Click me</a>
-  </div>
-  <div class="jumbotron">
-    <h5>If you have problem regarding electricity!</h5>
-    <br>
-    <a class="btn btn-primary btn-lg" href="/socialshout/subcatagory.html" id="openelectricity" role="button">Click
-      me</a>
-  </div>
-  <div class="jumbotron">
-    <h5>If you have problem regarding road construction!</h5>
-    <br>
-    <a class="btn btn-primary btn-lg" href="/socialshout/subcatagory.html" id="openroad" role="button">Click me</a>
-  </div>
-  <div class="jumbotron">
-    <h5>If you have problem regarding the safety in your locality!</h5>
-    <br>
-    <a class="btn btn-primary btn-lg" href="/socialshout/subcatagory.html" id="opensafety" role="button">Click me</a>
-  </div>
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success' %}
+<div class="alert alert-success" style="text-align: center;" role="alert">
+    {{message}}
+</div>
+{% endif %}
+{% if message.tags == 'error' %}
+<div class="alert alert-danger" style="text-align: center;" role="alert">
+    {{message}}
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
 
+<div class="container">
+  {% for cc1 in complaint_category %}
+  <div class="jumbotron">
+    <h5>If you have problem regarding {{cc1.name}}!</h5>
+    <br>
+    <a class="btn btn-primary btn-lg" href="subproblems/{{cc1.name}}/{{cc1.id}}/" id="openwater" role="button">Click me</a>
+  </div>
+  {% endfor %}
 </div>
 {% endblock content %}
 
