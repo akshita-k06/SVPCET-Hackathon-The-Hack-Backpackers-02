@@ -54,7 +54,7 @@ But if we look at the positive side we learnt time management quite well and it 
 
 ## Website link
 
-To see our website, please check out our website link : http://socialshout.psmweb.in/
+To see our porject, please check out our website link : http://socialshout.psmweb.in/
 
 
 ## Video Link
