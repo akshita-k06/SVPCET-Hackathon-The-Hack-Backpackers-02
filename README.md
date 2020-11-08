@@ -22,21 +22,30 @@ problem.
 ## Solution
 Considering the above problem, building an application that hears all the problems faced by citizens is the need of the hour. We have tried to build a website where the citizens can share their problems by posting them on it. Also, this application will convey all the complaints to the respected authorities and tell the time required to resolve the problem.
 To avoid fake problems, the complainant is bound to share the picture of the problem. One more feature has been added here two maintain transparency, an OTP would be sent on the registered Email ID to check the staunchness. The User also has to upload their scanned Adhaar card while registering.
+The type of problems that can be caused is already set up in a prioritised hierarchy to solve the emergency issues first. For example, issues such as leakage in pipelines are prioritized on a higher level to avoid wastage of water. Hence this application acts as an intermediate between the citizens and the respective authority.
 
 
 ## Project Description
+The project has a starting page where the individual can register either as a complainant or the complaint solver. While registering the user has to provide details such as name, userID, password, aadhaar, address, city, state followed by an OTP to get registered properly. Also, the Adhaar should be a scanned original copy. There is also the functionality of the forgot password in case the user forgets later.
+After registration, the user would lead to another page where the individual has to choose the type of problems related to it. There are options for Electricity, Garbage, Roads, Water, and Safety in the respective locality. After clicking on the chosen category certain possible options are given, from which the user can choose the relatable one, or type the one if not mentioned in the given options. After selecting the options the complaint would get registered and the time taken to resolve the complaint would be provided.
+FEATURES:
+1.	Secure login-logout (password encryption)
+2.	User Friendly
+3.	Transparency in application
+4.	Fully Informative
+5.	Filtration in complaints using hierarchy.
 
-**Note: Describe the project structure and all other details, here.**
 
-...
-...
+
 
 ## Problem Faced
- Firstly as everything was online, while contributing code it was a difficult and time consuming process.
-There were certain connectivity issues which led to waste time a bit.
-As it is the term end time, there were a lot of submissions and slide presentations simultaneously going on in the college.
-Debugging errors was a bit difficult.
+1.	 Firstly as everything was online while contributing code it was a difficult and time consuming process.
+2.	Certain connectivity issues led to a waste of time a bit.
+3.	As it is the term end time, there were a lot of submissions and slide presentations simultaneously going on in the college.
+4.	Debugging errors was a bit difficult.
 But if we look at the positive side we learnt time management quite well and it was a great experience for us working as a team on this project.
+
+
 
 ## Tech-Stack Used
 
