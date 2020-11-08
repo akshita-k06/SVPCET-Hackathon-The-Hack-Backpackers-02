@@ -53,17 +53,47 @@ Mention the video link containing demo of the project here.
 
 **Note: Mention all the commands/steps to run this project, here**
 
+Download all repository files
+
+
+1 - First setup python
+
+
+2 -then venv — Creation of virtual environments (https://docs.python.org/3/library/venv.html)
+
+3) run the following commands: 
+
 ### `command 1`
 
-Command Descriprion
-...
-...
+pip install django
 
 ### `command 2`
 
-Command Descriprion
-...
-...
+pip install mysqlclient
+
+
+### `command 3`
+
+pip install wheel
+
+### `command 4`
+
+pip install Pillow
+
+### `command 5`
+
+for windows run 
+python manage.py collectstatic
+for linux
+python3 manage.py collectstatic
+
+### `command 6`
+
+python manage.py runerver 
+
+it start devlopment server
+
+
 
 ## Mention Any other details here:
 
