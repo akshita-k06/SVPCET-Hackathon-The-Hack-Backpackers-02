@@ -20,11 +20,9 @@ system must contain following :
 problem.
 
 ## Solution
+Considering the above problem, building an application that hears all the problems faced by citizens is the need of the hour. We have tried to build a website where the citizens can share their problems by posting them on it. Also, this application will convey all the complaints to the respected authorities and tell the time required to resolve the problem.
+To avoid fake problems, the complainant is bound to share the picture of the problem. One more feature has been added here two maintain transparency, an OTP would be sent on the registered Email ID to check the staunchness. The User also has to upload their scanned Adhaar card while registering.
 
-**Note: Describe your solution, here**
-
-...
-...
 
 ## Project Description
 
